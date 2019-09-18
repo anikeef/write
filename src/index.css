@@ -1,13 +1,104 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Fonts */
+
+/* @font-face {
+  font-family: 'Raleway';
+  src: local('Raleway Light'), local('Raleway-Light'), 
+  url('raleway/ralewaylight.woff2') format('woff2'), 
+  url('raleway/ralewaylight.woff') format('woff'), 
+  url('raleway/ralewaylight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@font-face {
+  font-family: 'Raleway';
+  src: local('Raleway Regular'), local('Raleway-Regular'), 
+  url('raleway/ralewayregular.woff2') format('woff2'), 
+  url('raleway/ralewayregular.woff') format('woff'), 
+  url('raleway/ralewayregular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: 'Raleway';
+  src: local('Raleway Bold'), local('Raleway-ExtraBold'), 
+  url('raleway/ralewaybold.woff2') format('woff2'), 
+  url('raleway/ralewaybold.woff') format('woff'), 
+  url('raleway/ralewaybold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Global */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  font-size: 14px;
+}
+
+/* Editor */
+
+.live-editor {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.editor,
+.output {
+  width: 50%;
+  flex: 0 0 50%;
+  padding: 30px;
+}
+
+.editor {
+  resize: none;
+  outline: none;
+  border: none;
+  background-color: #eee;
+  font-size: 1em;
+  font-family: 'Roboto Mono', monospace;
+  line-height: 150%;
+}
+
+/* Output */
+
+.output {
+  padding: 60px;
+}
+
+.output h1,
+.output h2,
+.output h3,
+.output h4,
+.output h5,
+.output h6 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.015rem;
+}
+
+.output h1 {
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+.output h2 {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.output p {
+  line-height: 163%;
+}
+
+.output code {
+  font-family: 'Roboto Mono', monospace;
 }

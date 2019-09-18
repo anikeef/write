@@ -15,7 +15,7 @@ export const MarkdownRender = (props) => {
       math: ({ value }) => <BlockMath>{ value }</BlockMath>,
       inlineMath: ({ value }) => <InlineMath>{ value }</InlineMath>,
     },
-    className: "md-output"
+    className: "output"
   };
   return (
     <ReactMarkdown {...newProps} />
