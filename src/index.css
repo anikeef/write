@@ -41,6 +41,7 @@
 
 body {
   font-size: 14px;
+  overflow: hidden;
 }
 
 /* Editor */
@@ -56,6 +57,7 @@ body {
   width: 50%;
   flex: 0 0 50%;
   padding: 30px;
+  overflow: auto;
 }
 
 .editor {
@@ -91,14 +93,35 @@ body {
 }
 
 .output h2 {
+  font-size: 24px;
   margin: 15px 0;
+}
+
+.output h3 {
   font-size: 18px;
+  margin: 15px 0;
+}
+
+.output h4 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.output h5 {
+  font-size: 14px;
+  margin: 10px 0;
 }
 
 .output p {
   line-height: 163%;
+  margin-bottom: 15px;
 }
 
 .output code {
   font-family: 'Roboto Mono', monospace;
+}
+
+.katex-display {
+  /* Rewrite external margin */
+  margin: 30px 0 !important;
 }
