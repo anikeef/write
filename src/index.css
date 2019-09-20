@@ -1,31 +1,11 @@
 /* Fonts */
 
-/* @font-face {
-  font-family: 'Raleway';
-  src: local('Raleway Light'), local('Raleway-Light'), 
-  url('raleway/ralewaylight.woff2') format('woff2'), 
-  url('raleway/ralewaylight.woff') format('woff'), 
-  url('raleway/ralewaylight.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Raleway';
-  src: local('Raleway Regular'), local('Raleway-Regular'), 
-  url('raleway/ralewayregular.woff2') format('woff2'), 
-  url('raleway/ralewayregular.woff') format('woff'), 
-  url('raleway/ralewayregular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-} */
-
 @font-face {
   font-family: 'Raleway';
   src: local('Raleway Bold'), local('Raleway-ExtraBold'), 
-  url('raleway/ralewaybold.woff2') format('woff2'), 
-  url('raleway/ralewaybold.woff') format('woff'), 
-  url('raleway/ralewaybold.ttf') format('truetype');
+  url('assets/fonts/raleway/ralewaybold.woff2') format('woff2'), 
+  url('assets/fonts/raleway/ralewaybold.woff') format('woff'), 
+  url('assets/fonts/raleway/ralewaybold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
@@ -47,20 +27,21 @@ body {
 /* Editor */
 
 .live-editor {
-  display: flex;
   height: 100vh;
   width: 100%;
 }
 
 .editor,
 .output {
+  position: absolute;
   width: 50%;
-  flex: 0 0 50%;
   padding: 30px;
   overflow: auto;
+  height: 100vh;
 }
 
 .editor {
+  left: 0;
   resize: none;
   outline: none;
   border: none;
@@ -73,7 +54,45 @@ body {
 /* Output */
 
 .output {
+  right: 0;
   padding: 60px;
+  background-color: white;
+  transition: width .5s;
+}
+
+.output_fullscreen {
+  width: 100%;
+}
+
+.output__toggle-button {
+  transition: transform .5s;
+}
+
+.output_fullscreen .output__toggle-button {
+  transform: rotate(180deg);
+}
+
+.output__toggle-editor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 40px;
+  height: 100vh;
+  background-color: rgb(250, 250, 250);
+  transition: opacity .2s;
+  opacity: 0;
+}
+
+.output__toggle-editor:hover {
+  opacity: 1;
+}
+
+.output__content {
+  margin: 0 auto;
+  max-width: 850px;
 }
 
 .output h1,
@@ -107,7 +126,8 @@ body {
   margin: 10px 0;
 }
 
-.output h5 {
+.output h5,
+.output h6 {
   font-size: 14px;
   margin: 10px 0;
 }
@@ -126,7 +146,42 @@ body {
   font-family: 'Roboto Mono', monospace;
 }
 
+.output ul {
+  list-style-position: inside;
+  line-height: 163%;
+}
+
+.output ul ul {
+  margin: 5px 0 5px 20px;
+}
+
+.output li {
+  
+}
+
 .katex-display {
   /* Rewrite external margin */
   margin: 30px 0 !important;
+}
+
+
+
+/* Icons */
+
+.icon {
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+}
+
+.icon-fullscreen {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 20px;
+  background: no-repeat center/20px url("assets/img/fullscreen.svg");
+}
+
+.icon-arrow-left {
+  background: no-repeat center/20px url("assets/img/larrow.png");
 }
