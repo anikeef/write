@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/write/static/css/main.5c2d5918.chunk.css",
+    "main.js": "/write/static/js/main.75ba2c7d.chunk.js",
+    "main.js.map": "/write/static/js/main.75ba2c7d.chunk.js.map",
+    "runtime~main.js": "/write/static/js/runtime~main.0c0d2ecc.js",
+    "runtime~main.js.map": "/write/static/js/runtime~main.0c0d2ecc.js.map",
+    "static/css/2.d33452b7.chunk.css": "/write/static/css/2.d33452b7.chunk.css",
+    "static/js/2.3f8c788a.chunk.js": "/write/static/js/2.3f8c788a.chunk.js",
+    "static/js/2.3f8c788a.chunk.js.map": "/write/static/js/2.3f8c788a.chunk.js.map",
+    "index.html": "/write/index.html",
+    "precache-manifest.8eb1824e300415effa1759b023940183.js": "/write/precache-manifest.8eb1824e300415effa1759b023940183.js",
+    "service-worker.js": "/write/service-worker.js",
+    "static/css/2.d33452b7.chunk.css.map": "/write/static/css/2.d33452b7.chunk.css.map",
+    "static/css/main.5c2d5918.chunk.css.map": "/write/static/css/main.5c2d5918.chunk.css.map",
+    "static/media/katex.min.css": "/write/static/media/KaTeX_Typewriter-Regular.f43e8696.woff2",
+    "static/media/index.css": "/write/static/media/ralewaybold.a4a08c4d.ttf"
+  }
+}
