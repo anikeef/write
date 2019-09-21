@@ -2,7 +2,9 @@
   "name": "react-md",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://anikeef.github.io/write",
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-katex": "^2.0.2",
@@ -10,8 +12,7 @@
     "react-mathjax": "^1.0.1",
     "react-scripts": "3.1.1",
     "react-spinners": "^0.6.1",
-    "remark-math": "^2.0.0",
-    "url-parse": "^1.4.7"
+    "remark-math": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

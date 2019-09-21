@@ -1,4 +1,3 @@
-import parse from 'url-parse';
 import { MyJsonService } from './MyJsonService';
 
 const URL_BASE = 'localhost:3000/'
