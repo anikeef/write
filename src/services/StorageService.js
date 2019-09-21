@@ -22,7 +22,7 @@ export const StorageService = (function() {
 
   const getMarkdownFromCurrentURI = () => {
     const pathname = window.location.pathname;
-    if (pathname === '') return Promise.resolve(_getCachedMarkdown());
+    if (pathname === '/') return Promise.resolve(_getCachedMarkdown());
     return MyJsonService.get(_extractIdFromURI(pathname)).then(
         (json) => json.markdown,
         (error) => console.log(error)

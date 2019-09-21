@@ -9,6 +9,7 @@
     "react-markdown": "^4.2.2",
     "react-mathjax": "^1.0.1",
     "react-scripts": "3.1.1",
+    "react-spinners": "^0.6.1",
     "remark-math": "^2.0.0",
     "url-parse": "^1.4.7"
   },

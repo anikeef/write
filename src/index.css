@@ -73,9 +73,9 @@ body {
 }
 
 .output__toggle-editor {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: fixed;
+  margin-left: -60px;
+  margin-top: -60px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -93,7 +93,13 @@ body {
 
 .output__content {
   margin: 0 auto;
-  max-width: 850px;
+  max-width: 750px;
+}
+
+.output img {
+  display: block;
+  max-width: 100%;
+  margin: 10px auto;
 }
 
 .output h1,
@@ -133,7 +139,9 @@ body {
   margin: 10px 0;
 }
 
-.output p {
+.output p,
+.output ul,
+.output ol {
   line-height: 163%;
   margin-bottom: 15px;
 }
@@ -147,9 +155,9 @@ body {
   font-family: 'Roboto Mono', monospace;
 }
 
-.output ul {
+.output ul,
+.output ol {
   list-style-position: inside;
-  line-height: 163%;
 }
 
 .output ul ul {
@@ -203,4 +211,13 @@ body {
 
 .icon-arrow-left {
   background: no-repeat center/20px url("assets/img/larrow.png");
+}
+
+/* Loading */
+
+.loading {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
