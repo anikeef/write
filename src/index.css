@@ -84,6 +84,7 @@ body {
   background-color: rgb(250, 250, 250);
   transition: opacity .2s;
   opacity: 0;
+  cursor: pointer;
 }
 
 .output__toggle-editor:hover {
@@ -155,16 +156,38 @@ body {
   margin: 5px 0 5px 20px;
 }
 
-.output li {
-  
-}
-
 .katex-display {
   /* Rewrite external margin */
   margin: 30px 0 !important;
 }
 
+/* Save button */
 
+.save-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.save-button {
+  margin: 5px;
+  background-color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.save-info {
+  margin-right: 15px;
+  width: 200px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.123);
+  border: none;
+}
 
 /* Icons */
 
@@ -175,11 +198,7 @@ body {
 }
 
 .icon-fullscreen {
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin: 20px;
-  background: no-repeat center/20px url("assets/img/fullscreen.svg");
+  background: no-repeat center/20px url("assets/img/share.png");
 }
 
 .icon-arrow-left {
