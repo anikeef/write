@@ -29,6 +29,9 @@ export const StorageService = (function() {
       )
   }
 
-  
-  return { createLink, getMarkdownFromCurrentURI };
+  const cacheMarkdown = (markdown) => {
+    window.localStorage.setItem('markdown', markdown);
+  }
+
+  return { createLink, getMarkdownFromCurrentURI, cacheMarkdown };
 })();

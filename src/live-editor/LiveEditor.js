@@ -27,7 +27,7 @@ export class LiveEditor extends React.Component {
         })
       })
 
-    this.onChange = this.onChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.toggleEditor = this.toggleEditor.bind(this);
     this.handleSave = this.handleSave.bind(this);
   }
@@ -39,7 +39,7 @@ export class LiveEditor extends React.Component {
 
     return (
       <div className="live-editor">
-        <Editor value={ this.state.markdown }onChange={ this.onChange }/>
+        <Editor value={ this.state.markdown }onChange={ this.handleChange }/>
         <div className={ "output" + (this.state.fullScreen ? " output_fullscreen" : "")}>
           <SaveButton url={ this.state.generatedURI } onClick={ this.handleSave } 
           shouldShowSavingInfo={ this.state.shouldShowSavingInfo } />
@@ -52,13 +52,13 @@ export class LiveEditor extends React.Component {
     );
   }
 
-  onChange(event) {
+  handleChange(event) {
     this.setState({
       markdown: event.target.value,
       shouldShowSavingInfo: false,
       generatedURI: ""
     });
-    window.localStorage.setItem("markdown", event.target.value);
+    StorageService.cacheMarkdown(event.target.value);
   }
 
   toggleEditor() {
