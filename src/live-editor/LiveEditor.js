@@ -8,24 +8,25 @@ import { StorageService } from '../services/StorageService';
 import { Loading } from './Loading';
 
 export class LiveEditor extends React.Component {
-  constructor() {
+  constructor({ presetId }) {
     super();
-    const isURIEmpty = window.location.pathname === "/";
     this.state = {
-      markdown: "",
-      fullScreen: !isURIEmpty,
+      markdown: StorageService.getCachedMarkdown(),
+      fullScreen: false,
       generatedURI: "",
       shouldShowSavingInfo: false,
-      isLoading: !isURIEmpty
+      isLoading: !!presetId
     }
-    StorageService.getMarkdownFromCurrentURI()
+
+    if (presetId) {
+      StorageService.getMarkdown(presetId)
       .then((markdown) => {
         this.setState({ 
           markdown: markdown,
-          generatedURI: isURIEmpty ? "" : window.location.toString(),
           isLoading: false
         })
-      })
+      });
+    }
 
     this.handleChange = this.handleChange.bind(this);
     this.toggleEditor = this.toggleEditor.bind(this);
@@ -68,7 +69,6 @@ export class LiveEditor extends React.Component {
   }
 
   handleSave() {
-    console.log(this.state.generatedURI);
     this.setState({ shouldShowSavingInfo: !this.state.shouldShowSavingInfo });
     if (this.state.generatedURI) return;
     StorageService.createLink(this.state.markdown)
