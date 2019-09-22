@@ -45,128 +45,10 @@ body {
   resize: none;
   outline: none;
   border: none;
-  background-color: #eee;
+  background-color: rgb(246, 248, 250);
   font-size: 1em;
   font-family: 'Roboto Mono', monospace;
   line-height: 150%;
-}
-
-/* Output */
-
-.output {
-  right: 0;
-  padding: 60px;
-  background-color: white;
-  transition: width .5s;
-}
-
-.output_fullscreen {
-  width: 100%;
-}
-
-.output__toggle-button {
-  transition: transform .5s;
-}
-
-.output_fullscreen .output__toggle-button {
-  transform: rotate(180deg);
-}
-
-.output__toggle-editor {
-  position: fixed;
-  margin-left: -60px;
-  margin-top: -60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 40px;
-  height: 100vh;
-  background-color: rgb(250, 250, 250);
-  transition: opacity .2s;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.output__toggle-editor:hover {
-  opacity: 1;
-}
-
-.output__content {
-  margin: 0 auto;
-  max-width: 750px;
-}
-
-.output img {
-  display: block;
-  max-width: 100%;
-  margin: 10px auto;
-}
-
-.output h1,
-.output h2,
-.output h3,
-.output h4,
-.output h5,
-.output h6 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.015rem;
-}
-
-.output h1 {
-  margin-bottom: 20px;
-  font-size: 36px;
-}
-
-.output h2 {
-  font-size: 24px;
-  margin: 15px 0;
-}
-
-.output h3 {
-  font-size: 18px;
-  margin: 15px 0;
-}
-
-.output h4 {
-  font-size: 16px;
-  margin: 10px 0;
-}
-
-.output h5,
-.output h6 {
-  font-size: 14px;
-  margin: 10px 0;
-}
-
-.output p,
-.output ul,
-.output ol {
-  line-height: 163%;
-  margin-bottom: 15px;
-}
-
-.output a {
-  text-decoration: none;
-  color: #0094FF;
-}
-
-.output code {
-  font-family: 'Roboto Mono', monospace;
-}
-
-.output ul,
-.output ol {
-  list-style-position: inside;
-}
-
-.output ul ul {
-  margin: 5px 0 5px 20px;
-}
-
-.katex-display {
-  /* Rewrite external margin */
-  margin: 30px 0 !important;
 }
 
 /* Save button */
@@ -222,4 +104,164 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+/************************* Output **************************/
+/***********************************************************/
+
+.output {
+  right: 0;
+  padding: 60px;
+  background-color: white;
+  transition: width .5s;
+}
+
+.output_fullscreen {
+  width: 100%;
+}
+
+.output__toggle-button {
+  transition: transform .5s;
+}
+
+.output_fullscreen .output__toggle-button {
+  transform: rotate(180deg);
+}
+
+.output__toggle-editor {
+  position: fixed;
+  margin-left: -60px;
+  margin-top: -60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 40px;
+  height: 100vh;
+  background-color: rgb(246, 248, 250);
+  transition: opacity .2s;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.output__toggle-editor:hover {
+  opacity: 1;
+}
+
+.output__content {
+  margin: 0 auto;
+  max-width: 750px;
+}
+
+.output img {
+  display: block;
+  max-width: 100%;
+}
+
+.output p,
+.output table,
+.output pre,
+.output img,
+.output ul,
+.output ol {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 160%;
+}
+
+.output a {
+  text-decoration: none;
+  color: #0094FF;
+}
+
+.katex-display {
+  /* Rewrite external margin */
+  margin: 30px 0 !important;
+}
+
+/* Headers */
+
+.output h1,
+.output h2,
+.output h3,
+.output h4,
+.output h5,
+.output h6 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.015rem;
+}
+
+.output h1 {
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+.output h2 {
+  font-size: 24px;
+  margin: 15px 0;
+}
+
+.output h3 {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+.output h4 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.output h5,
+.output h6 {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+/* Tables */
+
+.output table {
+  border-collapse: collapse;
+}
+
+.output td,
+.output th {
+  border: 1px solid rgb(223, 226, 229);
+  padding: 10px 20px;
+}
+
+.output tr:nth-child(2n) {
+  background-color: rgb(246, 248, 250);
+}
+
+/* Lists */
+
+.output ul,
+.output ol {
+  list-style-position: inside;
+}
+
+.output ul ul {
+  margin-left: 20px;
+  margin-top: 0;
+}
+
+/* Code */
+
+.output code {
+  font-family: 'Roboto Mono', monospace;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background-color: rgb(244, 244, 244);
+}
+
+.output pre {
+  margin: 15px 0;
+  padding: 20px;
+  background-color: rgb(246, 248, 250);
+  border-radius: 5px;
+}
+
+.output pre code {
+  background-color: transparent;
+  padding: 0;
 }

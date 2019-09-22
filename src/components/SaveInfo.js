@@ -6,7 +6,7 @@ export class SaveInfo extends React.Component {
     if (!shouldShow) return null;
     return (
       <div className="save-info">
-        { (url) ? <a className="saved-link" href={ url } target="_blank">{ url }</a> : "Wait..." }
+        { (url) ? <a className="saved-link" href={ url } target="_blank" rel="noopener noreferrer">{ url }</a> : "Wait..." }
       </div>
     );
       
