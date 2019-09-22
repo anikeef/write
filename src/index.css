@@ -166,8 +166,7 @@ body {
 }
 
 .output table,
-.output pre,
-.output img {
+.output pre {
   margin: 20px 0;
 }
 
