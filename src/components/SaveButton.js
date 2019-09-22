@@ -1,20 +1,28 @@
 import React from 'react';
+import { SaveInfo } from './SaveInfo';
 
-export const SaveButton = ({ onClick, url, shouldShowSavingInfo }) => {
-  const savingInfo = shouldShowSavingInfo ? 
-    <input className="save-info" placeholder="Wait..." disabled value={ url }></input> : null
+export class SaveButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.container = null;
+    this.handleClose = this.handleClose.bind(this);
+  }
 
-  document.addEventListener("document:click", () => {
-    alert("af");
-  })
+  render() {
+    const { onClick, url, shouldShowSavingInfo } = this.props;
+    return (
+      <div className="save-container" ref={ (node) => this.container = node }>
+        <SaveInfo url={ url } shouldShow={ shouldShowSavingInfo } close={ this.handleClose } />
+        <button className="save-button" onClick={ onClick }>
+          <span className="icon icon-fullscreen"></span>
+        </button>
+      </div>
+    );
+  }
 
-  return (
-    <div className="save-container">
-      { savingInfo }
-      <button className="save-button" onClick={ onClick }>
-        <span className="icon icon-fullscreen"></span>
-      </button>
-      
-    </div>
-  );
+  handleClose(event) {
+    if (!this.container.contains(event.target)) {
+      this.props.closeSavingInfo();
+    }
+  }
 }

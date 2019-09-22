@@ -31,6 +31,7 @@ export class LiveEditor extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.toggleEditor = this.toggleEditor.bind(this);
     this.handleSave = this.handleSave.bind(this);
+    this.closeSavingInfo = this.closeSavingInfo.bind(this);
   }
 
   render() {
@@ -43,7 +44,7 @@ export class LiveEditor extends React.Component {
         <Editor value={ this.state.markdown }onChange={ this.handleChange }/>
         <div className={ "output" + (this.state.fullScreen ? " output_fullscreen" : "")}>
           <SaveButton url={ this.state.generatedURI } onClick={ this.handleSave } 
-          shouldShowSavingInfo={ this.state.shouldShowSavingInfo } />
+          shouldShowSavingInfo={ this.state.shouldShowSavingInfo } closeSavingInfo={ this.closeSavingInfo }/>
           <ToggleEditor onClick={ this.toggleEditor }/>
           <div className="output__content">
             <MarkdownRender source={ this.state.markdown }></MarkdownRender>
@@ -79,5 +80,11 @@ export class LiveEditor extends React.Component {
           })
         }
       );
+  }
+
+  closeSavingInfo() {
+    if (this.state.shouldShowSavingInfo) {
+      this.setState({ shouldShowSavingInfo: false })
+    }
   }
 }
