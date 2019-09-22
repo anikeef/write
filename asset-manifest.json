@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/write/static/css/main.5f4d1a22.chunk.css",
+    "main.css": "/write/static/css/main.f3ab4de2.chunk.css",
     "main.js": "/write/static/js/main.94c2fd11.chunk.js",
     "main.js.map": "/write/static/js/main.94c2fd11.chunk.js.map",
     "runtime~main.js": "/write/static/js/runtime~main.0c0d2ecc.js",
@@ -9,10 +9,10 @@
     "static/js/2.580106a1.chunk.js": "/write/static/js/2.580106a1.chunk.js",
     "static/js/2.580106a1.chunk.js.map": "/write/static/js/2.580106a1.chunk.js.map",
     "index.html": "/write/index.html",
-    "precache-manifest.30892966fcdc37d943ff7f39f9dee3d6.js": "/write/precache-manifest.30892966fcdc37d943ff7f39f9dee3d6.js",
+    "precache-manifest.67ce3aa1c4057df4a178c65642d06a66.js": "/write/precache-manifest.67ce3aa1c4057df4a178c65642d06a66.js",
     "service-worker.js": "/write/service-worker.js",
     "static/css/2.88e9d13c.chunk.css.map": "/write/static/css/2.88e9d13c.chunk.css.map",
-    "static/css/main.5f4d1a22.chunk.css.map": "/write/static/css/main.5f4d1a22.chunk.css.map",
+    "static/css/main.f3ab4de2.chunk.css.map": "/write/static/css/main.f3ab4de2.chunk.css.map",
     "static/media/katex.min.css": "/write/static/media/KaTeX_Typewriter-Regular.f43e8696.woff2",
     "static/media/index.css": "/write/static/media/ralewaybold.a4a08c4d.ttf"
   }
