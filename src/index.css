@@ -159,14 +159,16 @@ body {
 }
 
 .output p,
-.output table,
-.output pre,
-.output img,
 .output ul,
 .output ol {
-  margin-top: 15px;
-  margin-bottom: 20px;
+  margin: 15px 0;
   line-height: 165%;
+}
+
+.output table,
+.output pre,
+.output img {
+  margin: 20px 0;
 }
 
 .output a {
@@ -205,10 +207,6 @@ body {
 .output h3 {
   font-size: 18px;
   margin: 15px 0;
-}
-
-.output p + h3 {
-  margin-top: -5px;
 }
 
 .output h4 {
@@ -260,7 +258,6 @@ body {
 }
 
 .output pre {
-  margin: 15px 0;
   padding: 20px;
   background-color: rgb(246, 248, 250);
   border-radius: 5px;
