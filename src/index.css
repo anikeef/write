@@ -16,12 +16,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
 }
 
 body {
   font-size: 14px;
   overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Editor */
@@ -155,6 +155,7 @@ body {
 .output img {
   display: block;
   max-width: 100%;
+  margin: 20px auto;
 }
 
 .output p,
@@ -164,8 +165,8 @@ body {
 .output ul,
 .output ol {
   margin-top: 15px;
-  margin-bottom: 15px;
-  line-height: 160%;
+  margin-bottom: 20px;
+  line-height: 165%;
 }
 
 .output a {
@@ -204,6 +205,10 @@ body {
 .output h3 {
   font-size: 18px;
   margin: 15px 0;
+}
+
+.output p + h3 {
+  margin-top: -5px;
 }
 
 .output h4 {
