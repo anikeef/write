@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { LiveEditor } from './live-editor/LiveEditor';
-import { MarkdownViewer } from './live-editor/MarkdownViewer';
+import { LiveEditor } from './components/LiveEditor';
+import { MarkdownViewer } from './components/MarkdownViewer';
 
 const App = () => {
   return (
