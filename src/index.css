@@ -24,6 +24,11 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: #0094FF;
+}
+
 /* Editor */
 
 .live-editor {
@@ -51,7 +56,41 @@ body {
   line-height: 150%;
 }
 
-/* Save button */
+/* Editor Actions */
+
+.editor-actions {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.editor-actions__create-link {
+  width: 230px;
+  padding: 8px;
+  border-radius: 7px;
+  text-align: center;
+  font-size: 12px;
+  color: transparent;
+  text-shadow: 0 0 0 #555;
+  background-color: rgb(244, 244, 244);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.editor-actions__help {
+  font-size: 18px;
+  padding: 5px 15px;
+  text-decoration: none;
+  font-family: Raleway;
+  font-weight: 700;
+  color: #555
+}
+
+/* Save button
 
 .save-container {
   position: absolute;
@@ -79,7 +118,7 @@ body {
   color: #555;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.123);
   border: none;
-}
+} */
 
 /* Icons */
 
@@ -168,11 +207,6 @@ body {
 .output table,
 .output pre {
   margin: 20px 0;
-}
-
-.output a {
-  text-decoration: none;
-  color: #0094FF;
 }
 
 .katex-display {

@@ -3,9 +3,9 @@ import React from 'react';
 import { MarkdownRender } from "./MarkdownRender";
 import { Editor } from "./Editor";
 import { ToggleEditor } from "./ToggleEditor";
-import { SaveButton } from "./SaveButton";
 import { StorageService } from '../services/StorageService';
 import { Loading } from './Loading';
+import { EditorActions } from './EditorActions';
 
 export class LiveEditor extends React.Component {
   constructor({ presetId }) {
@@ -14,7 +14,7 @@ export class LiveEditor extends React.Component {
       markdown: StorageService.getCachedMarkdown(),
       fullScreen: false,
       generatedURI: '',
-      shouldShowSavingInfo: false,
+      isCreatingLink: false,
       isLoading: !!presetId
     }
 
@@ -41,10 +41,10 @@ export class LiveEditor extends React.Component {
 
     return (
       <div className="live-editor">
-        <Editor value={ this.state.markdown }onChange={ this.handleChange }/>
+        <Editor value={ this.state.markdown } onChange={ this.handleChange }/>
         <div className={ "output" + (this.state.fullScreen ? " output_fullscreen" : "")}>
-          <SaveButton url={ this.state.generatedURI } onClick={ this.handleSave } 
-          shouldShowSavingInfo={ this.state.shouldShowSavingInfo } closeSavingInfo={ this.closeSavingInfo }/>
+          <EditorActions uri={ this.state.generatedURI } onSave={ this.handleSave } 
+          isCreatingLink={ this.state.isCreatingLink } shouldShowHelp={ !!this.props.presetId } />
           <ToggleEditor onClick={ this.toggleEditor }/>
           <div className="output__content">
             <MarkdownRender source={ this.state.markdown }></MarkdownRender>
@@ -70,13 +70,14 @@ export class LiveEditor extends React.Component {
   }
 
   handleSave() {
-    this.setState({ shouldShowSavingInfo: !this.state.shouldShowSavingInfo });
-    if (this.state.generatedURI) return;
+    if (this.state.generatedURI && this.state.isCreatingLink) return;
+    this.setState({ isCreatingLink: true });
     StorageService.createLink(this.state.markdown)
       .then(
         (uri) => {
           this.setState({
-            generatedURI: uri
+            generatedURI: uri,
+            isCreatingLink: false
           })
         }
       );
