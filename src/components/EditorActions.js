@@ -16,7 +16,7 @@ export const EditorActions = ({ uri, isCreatingLink, onSave, shouldShowHelp }) =
         { linkContent }
       </div>
       { shouldShowHelp &&
-        <a className='editor-actions__help' href='/write/about' target="_blank" rel="noopener noreferrer">?</a>
+        <a className='editor-actions__help' href='/write/about'>?</a>
       }
     </div>
   );

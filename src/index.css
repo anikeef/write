@@ -82,43 +82,13 @@ a {
 }
 
 .editor-actions__help {
-  font-size: 18px;
+  font-size: 20px;
   padding: 5px 15px;
   text-decoration: none;
   font-family: Raleway;
   font-weight: 700;
-  color: #555
+  color: #999;
 }
-
-/* Save button
-
-.save-container {
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: flex;
-  align-items: center;
-  margin: 20px;
-}
-
-.save-button {
-  margin: 5px;
-  background-color: white;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-.save-info {
-  margin-right: 12px;
-  width: 300px;
-  padding: 10px 23px;
-  border-radius: 7px;
-  font-size: 12px;
-  color: #555;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.123);
-  border: none;
-} */
 
 /* Icons */
 
