@@ -13,7 +13,7 @@ export class LiveEditor extends React.Component {
     this.state = {
       markdown: StorageService.getCachedMarkdown(),
       fullScreen: false,
-      generatedURI: presetId ? window.location.toString().slice(0, -5) : '',
+      generatedURI: '',
       shouldShowSavingInfo: false,
       isLoading: !!presetId
     }

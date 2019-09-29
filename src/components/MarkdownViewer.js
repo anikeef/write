@@ -16,7 +16,14 @@ export class MarkdownViewer extends React.Component {
         this.setState({ 
           markdown: markdown,
           isLoading: false
-        })
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+        this.setState({ 
+          markdown: error.message,
+          isLoading: false
+        });
       });
   }
 

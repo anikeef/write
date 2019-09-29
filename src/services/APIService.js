@@ -1,6 +1,8 @@
-export const MyJsonService = (function() {
+const API_URI = 'https://anikeef-write-api.herokuapp.com/'
+
+export const APIService = (function() {
   const post = (body) => {
-    return window.fetch('https://api.myjson.com/bins', {
+    return window.fetch(API_URI + 'markdowns', {
       method: 'post',
       headers: {
         'Accept': 'application/json',
@@ -8,17 +10,16 @@ export const MyJsonService = (function() {
       },
       body: JSON.stringify(body)
     }).then(
-      (result) => result.json(),
+      (result) => result.json()
     );
   }
 
   const get = (id) => {
-    return window.fetch('https://api.myjson.com/bins/' + id)
+    return window.fetch(API_URI + 'markdowns/' + id)
       .then(
         (result) => result.json()
       )
   }
 
-
-  return { post, get }
-})()
+  return { post, get };
+})();

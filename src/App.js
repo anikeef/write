@@ -9,11 +9,8 @@ const App = () => {
     <BrowserRouter basename={ config.baseName }>
       <Switch>
         <Route exact path='/' component={ LiveEditor } />
-        <Route exact path='/:id' component={ MarkdownViewer } />
-        <Route path='/:id/edit' render={ ({ match }) => {
-          console.log(match);
-          return <LiveEditor presetId={match.params.id} /> ;
-        } }/>
+        <Route exact path='/markdowns/:id' component={ MarkdownViewer } />
+        <Route path='/about' render={ ({ match }) => <LiveEditor presetId='lejRe' /> } />
       </Switch>
     </BrowserRouter>
   );
