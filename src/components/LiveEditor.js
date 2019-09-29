@@ -8,24 +8,13 @@ import { Loading } from './Loading';
 import { EditorActions } from './EditorActions';
 
 export class LiveEditor extends React.Component {
-  constructor({ presetId }) {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      markdown: StorageService.getCachedMarkdown(),
+      markdown: props.preset || StorageService.getCachedMarkdown(),
       fullScreen: false,
       generatedURI: '',
-      isCreatingLink: false,
-      isLoading: !!presetId
-    }
-
-    if (presetId) {
-      StorageService.getMarkdown(presetId)
-      .then((markdown) => {
-        this.setState({ 
-          markdown: markdown,
-          isLoading: false
-        })
-      });
+      isCreatingLink: false
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -44,7 +33,7 @@ export class LiveEditor extends React.Component {
         <Editor value={ this.state.markdown } onChange={ this.handleChange }/>
         <div className={ "output" + (this.state.fullScreen ? " output_fullscreen" : "")}>
           <EditorActions uri={ this.state.generatedURI } onSave={ this.handleSave } 
-          isCreatingLink={ this.state.isCreatingLink } shouldShowHelp={ !!this.props.presetId } />
+          isCreatingLink={ this.state.isCreatingLink } shouldShowHelp={ !this.props.preset } />
           <ToggleEditor onClick={ this.toggleEditor }/>
           <div className="output__content">
             <MarkdownRender source={ this.state.markdown }></MarkdownRender>

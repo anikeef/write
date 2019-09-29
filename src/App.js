@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { LiveEditor } from './components/LiveEditor';
 import { MarkdownViewer } from './components/MarkdownViewer';
 import { config } from './config';
+import { aboutText } from './assets/about';
 
 const App = () => {
   return (
@@ -10,7 +11,7 @@ const App = () => {
       <Switch>
         <Route exact path='/' component={ LiveEditor } />
         <Route exact path='/markdowns/:id' component={ MarkdownViewer } />
-        <Route path='/about' render={ ({ match }) => <LiveEditor presetId='lejRe' /> } />
+        <Route path='/about' render={ () => <LiveEditor preset={ aboutText } /> } />
       </Switch>
     </BrowserRouter>
   );
