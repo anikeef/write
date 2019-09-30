@@ -1,4 +1,5 @@
 import React from 'react';
+import { config } from '../config';
 
 export const EditorActions = ({ uri, isCreatingLink, onSave, shouldShowHelp }) => {
   let linkContent;
@@ -16,7 +17,7 @@ export const EditorActions = ({ uri, isCreatingLink, onSave, shouldShowHelp }) =
         { linkContent }
       </div>
       { shouldShowHelp &&
-        <a className='editor-actions__help' href='/write/about'>?</a>
+        <a href={ config.baseName + 'about'  } className='editor-actions__help' >?</a>
       }
     </div>
   );

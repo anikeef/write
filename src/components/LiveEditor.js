@@ -4,7 +4,6 @@ import { MarkdownRender } from "./MarkdownRender";
 import { Editor } from "./Editor";
 import { ToggleEditor } from "./ToggleEditor";
 import { StorageService } from '../services/StorageService';
-import { Loading } from './Loading';
 import { EditorActions } from './EditorActions';
 
 export class LiveEditor extends React.Component {
@@ -24,10 +23,6 @@ export class LiveEditor extends React.Component {
   }
 
   render() {
-    if (this.state.isLoading) {
-      return <Loading />
-    }
-
     return (
       <div className="live-editor">
         <Editor value={ this.state.markdown } onChange={ this.handleChange }/>
