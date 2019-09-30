@@ -17,7 +17,8 @@ export const MarkdownRender = (props) => {
       math: ({ value }) => <BlockMath>{ value }</BlockMath>,
       inlineMath: ({ value }) => <InlineMath>{ value }</InlineMath>,
       code: ({ value }) => <Highlight>{ value }</Highlight>
-    }
+    },
+    className: 'output__content'
   };
   return (
     <ReactMarkdown {...newProps} />

@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { MarkdownRender } from "./MarkdownRender";
 import { Editor } from "./Editor";
-import { ToggleEditor } from "./ToggleEditor";
 import { StorageService } from '../services/StorageService';
-import { EditorActions } from './EditorActions';
+import { Output } from './Output';
 
 export class LiveEditor extends React.Component {
   constructor(props) {
@@ -17,7 +15,7 @@ export class LiveEditor extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this);
-    this.toggleEditor = this.toggleEditor.bind(this);
+    this.toggleFullScreen = this.toggleFullScreen.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.closeSavingInfo = this.closeSavingInfo.bind(this);
   }
@@ -26,14 +24,10 @@ export class LiveEditor extends React.Component {
     return (
       <div className="live-editor">
         <Editor value={ this.state.markdown } onChange={ this.handleChange }/>
-        <div className={ "output" + (this.state.fullScreen ? " output_fullscreen" : "")}>
-          <EditorActions uri={ this.state.generatedURI } onSave={ this.handleSave } 
-          isCreatingLink={ this.state.isCreatingLink } shouldShowHelp={ !this.props.preset } />
-          <ToggleEditor onClick={ this.toggleEditor }/>
-          <div className="output__content">
-            <MarkdownRender source={ this.state.markdown }></MarkdownRender>
-          </div>
-        </div>
+        <Output fullScreen={ this.state.fullScreen } uri={ this.state.generatedURI }
+        onSave={ this.handleSave } isCreatingLink={ this.state.isCreatingLink }
+        shouldShowHelp={ !this.props.preset } toggleFullScreen={ this.toggleFullScreen }
+        markdown={ this.state.markdown } />
       </div>
     );
   }
@@ -47,7 +41,7 @@ export class LiveEditor extends React.Component {
     StorageService.cacheMarkdown(event.target.value);
   }
 
-  toggleEditor() {
+  toggleFullScreen() {
     this.setState({
       fullScreen: !this.state.fullScreen
     });
