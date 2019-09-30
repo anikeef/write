@@ -34,9 +34,7 @@ export class MarkdownViewer extends React.Component {
 
     return (
       <div className="output output_fullscreen">
-        <div className="output__content">
-          <MarkdownRender source={ this.state.markdown } />
-        </div>
+        <MarkdownRender source={ this.state.markdown } />
       </div>
     );
   }
