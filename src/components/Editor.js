@@ -6,10 +6,9 @@ export class Editor extends React.Component {
     return (
       <div className="editor">
         <textarea autoFocus className="editor__textarea" onChange={ this.props.onChange } 
-        value={ this.props.value } placeholder="Enter your markdown"
-        ref={ (el) => this.textarea = el } />
+        value={ this.props.value } ref={ (el) => this.textarea = el } />
         <div className="editor__pseudo-textarea" ref={ (el) => { this.pseudoArea = el } }>
-          <Highlight className="markdown">{ this.props.value }</Highlight>
+          <Highlight className="markdown">{ this.props.value || "Enter your markdown" }</Highlight>
         </div>
       </div>
     )

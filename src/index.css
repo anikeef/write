@@ -160,6 +160,7 @@ a {
   background-color: white;
   transition: width .5s;
   overflow: auto;
+  z-index: 2;
 }
 
 .output_fullscreen {
