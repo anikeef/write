@@ -40,20 +40,56 @@ a {
 .output {
   position: absolute;
   width: 50%;
-  padding: 30px;
-  overflow: auto;
   height: 100vh;
 }
 
 .editor {
   left: 0;
+}
+
+.editor__textarea,
+.editor__pseudo-textarea {
+  width: 100%;
+  height: 100%;
+  line-height: 150%;
+  font-size: 14px;
   resize: none;
   outline: none;
   border: none;
-  background-color: rgb(246, 248, 250);
-  font-size: 1em;
   font-family: 'Roboto Mono', monospace;
-  line-height: 150%;
+  padding: 30px;
+  background-color: rgb(246, 248, 250);
+  overflow: auto;
+  display: block;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* Override Highlight.js */
+.editor__pseudo-textarea pre,
+.editor__pseudo-textarea code {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  background-color: transparent;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.editor__textarea {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  caret-color: black;
+  z-index: 1;
+}
+
+.editor__pseudo-textarea {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: transparent;
+  z-index: 0;
 }
 
 /* Editor Actions */
@@ -123,6 +159,7 @@ a {
   padding: 60px;
   background-color: white;
   transition: width .5s;
+  overflow: auto;
 }
 
 .output_fullscreen {
