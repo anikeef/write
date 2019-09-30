@@ -17,7 +17,7 @@ export const EditorActions = ({ uri, isCreatingLink, onSave, shouldShowHelp }) =
         { linkContent }
       </div>
       { shouldShowHelp &&
-        <a href={ config.baseName + 'about'  } className='editor-actions__help' >?</a>
+        <a href='about' className='editor-actions__help' >?</a>
       }
     </div>
   );
